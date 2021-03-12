@@ -2,12 +2,13 @@ Package: WhopGenome
 Type: Package
 Title: High-Speed Processing of VCF, FASTA and Alignment Data
 Version: 0.9.7
-Date: 2017-03-10
+Date: 2021-03-10
 Author: Ulrich Wittelsbuerger [aut, cre], Heng Li [ctb], Bob Handsaker [ctb]
-Authors@R: c(	person("Ulrich", "Wittelsbuerger", role = c("aut", "cre"),email = "ulrich.wittelsbuerger@uni-duesseldorf.de"),
+Authors@R: c(	person("Ulrich", "Wittelsbuerger", role = c("aut", "cre"), email = "ulrich.wittelsbuerger@uni-duesseldorf.de"),
+				person("Bastian","Pfeifer", "ctb"),
 				person("Heng", "Li", role = "ctb"),
 				person("Bob", "Handsaker", role = "ctb")			)
-Maintainer: Ulrich Wittelsbuerger <ulrich.wittelsbuerger@uni-duesseldorf.de>
+Maintainer: Bastian Pfeifer <bastianxpfeifer@gmail.com>
 Depends: R (>= 1.8.0)
 Suggests: RMySQL, DBI, AnnotationDbi
 Description: Provides very fast access to whole genome, population scale variation data

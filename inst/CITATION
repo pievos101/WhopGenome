@@ -1,0 +1,19 @@
+citHeader("To cite WhopGenome package in publications use:")
+
+citEntry(
+
+entry="Article",
+title = "WhopGenome: high-speed access to whole-genome variation and sequence data in R",
+journal= "Bioinformatics",
+year = "2015",
+author = c(
+	person("Ulrich", paste0("Wittelsb",iconv("\x9f", from = "MAC", to = "UTF-8"),"rger") ),
+	person("Bastian", "Pfeifer"),
+	person(c("Martin", "J."), "Lercher")),
+volume = "31",
+pages = "413-415",
+doi = "10.1093/bioinformatics/btu636",
+textVersion = paste0("Wittelsb",iconv("\x9f", from = "MAC", to = "UTF-8"),"rger, U. et al. (2015) WhopGenome: high-speed access to whole-genome variation and sequence data in R. Bioinformatics 31(3): 413-415. doi: 10.1093/bioinformatics/btu636")
+
+)
+

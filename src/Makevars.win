@@ -1,0 +1,106 @@
+#
+#
+
+PKG_LIBS = -lws2_32 -lz
+#PKG_LIBS += -lstdc++
+
+#
+#
+
+PKG_CFLAGS = $(C_VISIBILITY)
+PKG_CPPFLAGS =
+
+#	WhopGenome main source code files
+#
+
+	#	core whopgenome
+	#
+
+#WHOPSRCS= w_snpmat_diplo.cpp w_snpmat_int.cpp w_snpmat_fnc.cpp w_filtering.cpp w_read.cpp w_rsupport.cpp w_tools.cpp w_dataframe.cpp w_codemat.cpp w_main.cpp w_region.cpp w_samples.cpp
+WHOPSRCS= w_snpmat_diplo.cpp w_snpmat_int.cpp w_snpmat_str.cpp w_snpmat_fnc.cpp w_filtering.cpp w_read.cpp w_rsupport.cpp w_tools.cpp w_dataframe.cpp w_codemat.cpp w_main.cpp w_region.cpp w_samples.cpp
+#	w_codemat.cpp
+#	w_dataframe.cpp
+#	w_filtering.cpp
+#	w_main.cpp
+#	w_read.cpp
+#	w_region.cpp
+#	w_rsupport.cpp
+#	w_samples.cpp
+#	w_snpmat_fnc.cpp
+#	w_tools.cpp
+#	w_vcf.cpp
+
+	#	tabix interface
+	#
+
+TBISRCS = t_region.cpp t_info.cpp t_read.cpp t_Rifc.cpp
+#	t_Rifc.cpp
+#	t_read.cpp
+#	t_main.cpp
+#	t_info.cpp
+#	t_region.cpp
+
+	#	faidx interface
+	#
+
+FAISRCS = faidx_ifc.cpp
+#	faidx_ifc.cpp
+
+	#	readDNA++
+	#
+
+RDNAPPSRCS = readdnapp.cpp
+
+#	readdnapp.cpp
+
+	#	hm, don't remember anymore why I had to put these two files at the top of the list
+	#
+
+FIRSTSRCS =  w_vcf.cpp t_main.cpp
+
+CPPSOURCES = $(FIRSTSRCS) $(FAISRCS) $(WHOPSRCS) $(TBISRCS) $(RDNAPPSRCS)
+
+#	Tabix source code files
+#
+
+TABIXSRCS = tabix/bedidx.c tabix/bgzf.c tabix/index.c tabix/knetfile.c tabix/kstring.c 
+#	tabix/bedidx.c
+#	tabix/bgzf.c 
+#	tabix/index.c
+#	tabix/knetfile.c
+#	tabix/kstring.c
+
+#	FaIdx source code file
+#
+
+FAIDXSRCS = tabix/razf.c tabix/faidx.c
+#	tabix/faidx.c
+#	tabix/razf.c
+
+#	Zlib source code files
+#
+
+ZLIBSRCS =
+# zlib/adler32.c zlib/compress.c zlib/crc32.c zlib/deflate.c zlib/gzclose.c zlib/gzlib.c zlib/gzread.c zlib/gzwrite.c zlib/infback.c zlib/inffast.c zlib/inflate.c zlib/inftrees.c zlib/trees.c zlib/uncompr.c zlib/zutil.c
+#	zlib/adler32.c
+#	zlib/compress.c
+#	zlib/crc32.c
+#	zlib/deflate.c
+#	zlib/gzclose.c
+#	zlib/gzlib.c
+#	zlib/gzread.c
+#	zlib/gzwrite.c
+#	zlib/infback.c
+#	zlib/inffast.c
+#	zlib/inflate.c
+#	zlib/inftrees.c
+#	zlib/trees.c
+#	zlib/uncompr.c
+#	zlib/zutil.c
+
+CSOURCES =  $(TABIXSRCS) $(FAIDXSRCS) $(ZLIBSRCS)
+
+#
+#
+
+OBJECTS = $(CPPSOURCES:.cpp=.o) $(CSOURCES:.c=.o)

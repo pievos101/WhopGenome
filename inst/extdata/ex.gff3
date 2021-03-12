@@ -1,0 +1,10 @@
+ex.1	.	gene	1	456	.	+	.	ID=gene1
+ex.1	.	mRNA	1	456	.	+	.	Parent=gene;Name=Awesome+Gene+1;ID=rna1
+ex.1	.	five_prime_UTR	1	20	.	+	.	Parent=rna1
+ex.1	.	CDS	21	446	.	+	.	Parent=rna1
+ex.1	.	three_prime_UTR	447	456	.	+	.	Parent=rna1
+ex.2	.	gene	1	51	.	+	.	ID=gene2
+ex.2	.	five_prime_UTR	1	4	.	+	.	Parent=gene2
+ex.2	.	mRNA	5	40	.	+	.	Parent=gene2;Name=Awesome+Gene+2;ID=rna2
+ex.2	.	CDS	5	40	.	+	.	Parent=rna2
+ex.2	.	three_prime_UTR	41	51	.	+	.	Parent=gene2

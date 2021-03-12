@@ -1,0 +1,252 @@
+
+#
+#
+#
+useDynLib(WhopGenome)
+
+#
+#
+importFrom("utils", "read.delim", "write.table")
+
+#
+#	Tabix
+#
+export(tabix_open)
+export(tabix_read)
+export(tabix_close)
+export(tabix_reopen)
+export(tabix_read)
+export(tabix_readraw)
+export(tabix_build)
+export(tabix_getregion)
+export(tabix_setregion)
+export(tabix_restartregion)
+
+#
+#	FAI
+#
+export(fai_open)
+export(fai_close)
+export(fai_reopen)
+export(fai_build)
+export(fai_query2)
+export(fai_query4)
+export(fai_query3)
+export(fai_query5)
+
+#
+#	BGZF
+#
+export(bgzf_compress)
+
+#
+#	VCF
+#
+
+#
+#	-	Files
+#
+export(vcf_open)
+export(vcf_close)
+export(vcf_reopen)
+export(vcf_valid)
+export(vcf_buildindex)
+
+#
+#	-	Samples
+#
+export(vcf_getsamples)
+export(vcf_selectsamples)
+export(vcf_getselectedsamples)
+
+#
+#	-	Regions
+#
+export(vcf_getregion)
+export(vcf_setregion)
+export(vcf_restartregion)
+export(vcf_eor)
+
+
+#
+#	-	Filters
+#
+export(vcf_addfilter)
+export(vcf_clearfilters)
+export(vcf_describefilters)
+export(vcf_rule.disable)
+export(vcf_rule.enable)
+export(vcf_rule.setrefvalues)
+export(vcf_rule.setfield)
+export(vcf_rule.setcolumn)
+export(vcf_rule.setcomparison)
+export(vcf_rule.setrefvalues)
+export(vcf_rule.setaction)
+
+#
+#	-	Reading
+#
+export(vcf_readLineDF)
+export(vcf_readLineVec)
+export(vcf_readLineVecFiltered)
+export(vcf_readLineRaw)
+export(vcf_readLineRawFiltered)
+export(vcf_countBiallelicSNPs)
+export(vcf_countSNPs)
+export(vcf_parseNextSNP)
+export(vcf_parseNextLine)
+
+export(vcf_getChrom)
+export(vcf_getPos)
+export(vcf_getID)
+export(vcf_getRef)
+export(vcf_getAlt)
+export(vcf_getQual)
+export(vcf_getFilter)
+export(vcf_getFormat)
+export(vcf_getInfo)
+export(vcf_getInfoField)
+export(vcf_getSample)
+
+#		*	Matrix forms of the read functions :
+
+export(VCF_read_snp_diplo_bial_int_altpresence)
+export(VCF_read_snp_diplo_bial_str_allelechars)
+export(VCF_read_snp_diplo_bial_str_01)
+export(VCF_read_snp_diplo_bial_int_nuclcodes)
+export(VCF_read_snp_diplo_bial_str_nuclcodes)
+
+export(VCF_snpmat_diplo_bial_geno_filtered)			# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_geno_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_geno_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_geno_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_bial_geno_unfiltered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_geno_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_geno_unfiltered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_geno_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+
+export(VCF_snpmat_diplo_bial_ishet_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_ishet_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_ishet_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_ishet_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_bial_ishet_unfiltered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_ishet_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_ishet_unfiltered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_ishet_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+
+export(VCF_snpmat_diplo_bial_hasalt_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_hasalt_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_bial_hasalt_unfiltered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_hasalt_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_hasalt_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_hasalt_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_hasalt_unfiltered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_hasalt_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+
+export(VCF_snpmat_diplo_bial_nucodes_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_bial_nucodes_unfiltered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_nucodes_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_nucodes_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_diplo_anyal_nucodes_unfiltered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_anyal_nucodes_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+
+export(VCF_snpmat_anyplo_bial_nucodes_filtered)		# <- function( vcffh, mat ) .Call("VCF_snpmat_anyplo_bial_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_anyplo_bial_nucodes_unfiltered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_anyplo_bial_nucodes_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_anyplo_anyal_nucodes_filtered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_anyplo_anyal_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+export(VCF_snpmat_anyplo_anyal_nucodes_unfiltered)	# <- function( vcffh, mat ) .Call("VCF_snpmat_anyplo_anyal_nucodes_unfiltered", vcffh, mat, PACKAGE="WhopGenome" )
+
+##	Obsolete functions / function names and their redirections
+##
+##	VCF_readIntoCodeMatrix <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+##	read_snp_diplo_bial_int_altpresence <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_hasalt_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+##	read_snp_diplo_bial_int_nuclcodes <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_nucodes_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+##	read_snp_diplo_bial_str_allelechars <- function( vcffh, mat ) .Call("VCF_snpmat_diplo_bial_geno_filtered", vcffh, mat, PACKAGE="WhopGenome" )
+##	read_snp_diplo_bial_str_01 <- function( vcffh, mat )	stop("Not supported anymore: read_snp_diplo_bial_str_01 - use VCF_snpmat_diplo_bial_hasalt_(un)filtered instead")
+##	read_snp_diplo_bial_str_nuclcodes <- function( vcffh, mat )	stop("Not supported anymore: read_snp_diplo_bial_str_nuclcodes - use VCF_snpmat_diplo_bial_nucodes_(un)filtered instead")
+
+#
+#	-	Misc
+#
+export(vcf_getfieldnames)
+export(vcf_getnumcontigs)
+export(vcf_getcontignames)
+export(vcf_getheaderline)
+export(vcf_isSNP)
+export(vcf_isINDEL)
+
+#
+#	Bioconductor [Hs.]eg.db
+#
+export(whop.eg.abbrevForOrganism)
+export(whop.eg.orgdb_loaded)
+export(whop.eg.installdb)
+export(whop.eg.load_orgdb)
+export(whop.eg.selectOrganism)
+export(whop.eg.eg_lookupAll)
+export(whop.eg.eg_lookupSingle)
+export(whop.eg.eg_lookup)
+export(whop.eg.eg_RevLookup)
+export(whop.eg.fromAlias)
+export(whop.eg.fromAccnum)
+export(whop.eg.fromEnsembl)
+export(whop.eg.fromEnsemblProt)
+export(whop.eg.fromEnsemblTrans)
+export(whop.eg.fromEnzyme)
+export(whop.eg.fromGO)
+export(whop.eg.fromGO2AllEgs)
+export(whop.eg.fromOmim)
+export(whop.eg.fromPath)
+export(whop.eg.fromPmid)
+export(whop.eg.fromRefseq)
+export(whop.eg.fromUnigene)
+export(whop.eg.fromUniprot)
+export(whop.eg.toAlias)
+export(whop.eg.toAccnum)
+export(whop.eg.toEnsembl)
+export(whop.eg.toEnsemblProt)
+export(whop.eg.toEnsemblTrans)
+export(whop.eg.toEnzyme)
+export(whop.eg.toGO)
+export(whop.eg.toOmim)
+export(whop.eg.toPath)
+export(whop.eg.toPmid)
+export(whop.eg.toRefseq)
+export(whop.eg.toUnigene)
+export(whop.eg.toUniprot)
+export(whop.eg.toAccnum)
+export(whop.eg.genename)
+export(whop.eg.enzyme)
+export(whop.eg.region)
+export(whop.eg.chromosome)
+export(whop.eg.goIds)
+export(whop.eg.Organism)
+export(whop.eg.keggpathways)
+export(whop.kegg.pathway_url)
+
+#
+#	GO/AmiGO
+#
+export(whop.go.load)
+export(whop.go.match)
+export(whop.go.goid_like)
+export(whop.go.connect)
+export(whop.go.terms_match)
+export(whop.go.term_synonyms)
+export(whop.go.term_ancestors_similar)
+export(whop.go.term_ancestors)
+export(whop.go.term_children)
+export(whop.go.is_obsolete_byname)
+export(whop.go.is_obsolete_byid)
+export(whop.go.all_genes_for_term)
+
+#
+#	UCSC
+#
+export(whop.ucsc.query)
+export(whop.ucsc.genesForRegion)
+export(whop.ucsc.geneInfo)
+export(whop.ucsc.geneInfoSimilar)
+
+#
+#	PED pedigree
+#
+export(whop.ped.load)
+export(whop.ped.save)
+export(whop.ped.entriesOf)
+export(whop.ped.names)
+export(whop.ped.fathers)
+export(whop.ped.mothers)
+export(whop.ped.fromPop)
+export(whop.ped.males)
+export(whop.ped.females)
+export(whop.ped.parentsOf)
+export(whop.ped.familyOf)
+export(whop.ped.siblingsOf)
+export(whop.ped.daughtersOf)
+export(whop.ped.sonsOf)

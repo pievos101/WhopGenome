@@ -1,0 +1,3 @@
+LIBRARY WhopGenome.dll
+EXPORTS
+ R_init_WhopGenome
